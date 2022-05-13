@@ -13,8 +13,8 @@ Feature: sample karate test script
     Given path 'users', first.id
     When method get
     Then status 200
-	
-	@Homepage_negative_scenario
+
+  @Homepage_negative_scenario
   Scenario: create a user and then get it by id
     * def user =
       """
