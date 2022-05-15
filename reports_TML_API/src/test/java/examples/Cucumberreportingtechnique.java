@@ -28,7 +28,11 @@ class Cucumberreportingtechnique {
         System.out.println(results.getFeaturesFailed());
         System.out.println(results.getReportDir());
         generateCucumberReport(results.getReportDir());
-        Assertions.assertEquals(0, results.getFeaturesFailed());
+       
+        
+        CustomExtentReport extentReport = new CustomExtentReport().withKarateResult(results)
+        		.withReportDir(results.getReportDir()).withReportTitle("TML API Test Automation");
+        extentReport.generateExtentReport();
     }
     private void generateCucumberReport(String reportDirLocation) {
 		File reportDir = new File(reportDirLocation);
